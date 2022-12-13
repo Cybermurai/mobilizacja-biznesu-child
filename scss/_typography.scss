@@ -1,0 +1,127 @@
+@font-face {
+    font-family: Mulish;
+    src: url(../assets/fonts/Mulish.ttf);
+}
+@font-face {
+    font-family: OverpassMono;
+    src: url(../assets/fonts/OverpassMono.ttf);
+}
+
+
+
+
+:root {
+    --font-primary: 'Mulish';
+    --font-secondary: 'Overpass Mono';
+    --text-base-size: 1em;
+    --text-scale-ratio: 1.5;
+}
+
+
+
+.text{
+    font-style: normal;
+    &--code--small{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+    }
+    &--code--medium{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+    &--code--large{
+        font-family: var(--font-secondary);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;         
+    }
+    &--body--small{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: 0.2px;   
+    }
+    &--body--medium{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px; 
+    }
+    &--body--large{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;   
+    }
+    &--subtitle{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;  
+    }
+    &--h100{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;       
+    }
+    &--h200{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &--h300{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;        
+        @media(min-width:$breakpoint-xl-desktop){
+            font-size: 20px;
+            line-height: 32px;   
+        }   
+    }
+    &--h400{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 32px;   
+        @media(min-width:$breakpoint-xl-desktop){
+            font-size: 24px;
+            line-height: 36px;
+        }   
+    }
+    &--h500{
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        @media(min-width:$breakpoint-xl-desktop){
+            font-size: 32px;
+            line-height: 48px;
+        }    
+    }
+    &--h600{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 48px;  
+        @media(min-width:$breakpoint-xl-desktop){
+            font-size: 40px;
+            line-height: 60px;
+        }     
+    }
+    &--h700{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;       
+    }
+    &--h800{
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 84px;       
+    }
+    &--h900{
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 108px;       
+    }
+
+}

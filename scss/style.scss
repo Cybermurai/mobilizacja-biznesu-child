@@ -1,0 +1,611 @@
+/*
+Theme Name:   mobilizacja-biznesu Child
+Author:       Bartosz Szewczyk
+Template:     mobilizacja-biznesu
+Version:      1.0.0
+Text Domain:  mobilizacja-biznesu
+*/
+
+@import "normalize";
+@import "buttons";
+@import "variables";
+@import "colors";
+@import "typography";
+
+///Layout scss
+.l-header {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    justify-self: center;
+    width: 100%;
+    max-width: $layout-wrapper;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 24px 32px;
+    }
+}
+
+.l-footer {
+    background: radial-gradient(45% 104.25% at 85.62% 105.07%, rgba(0, 135, 254, 0.2) 0%, rgba(0, 135, 254, 0) 100%)
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+        #1f1f1d;
+    color: $--white--72;
+    padding: 64px 16px 64px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 64px 32px;
+    }
+}
+
+//Component SCSS
+// logo component
+.c-logo {
+    .c-logo__link__img {
+        width: 149px;
+        height: 32px;
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 187px;
+            height: 40px;
+        }
+    }
+}
+
+//Menu navigation component
+
+.c-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: $breakpoint-m-tablet) {
+        flex-direction: row;
+        gap: 64px;
+    }
+    &__menu-hamburger {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+        @media (min-width: $breakpoint-m-tablet) {
+            display: none;
+        }
+        &__button {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            &__line {
+                width: 21px;
+                height: 2px;
+                background-color: $--white--100;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .c-button {
+        display: none;
+        color: $--white--100;
+        text-decoration: none;
+        @extend .text--body--large;
+        @media (min-width: $breakpoint-m-tablet) {
+            display: block;
+        }
+    }
+    &__menu-container {
+        display: flex;
+        gap: 64px;
+        &--is-open {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: grey;
+            top: 0;
+            left: 0;
+            ul {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                gap: 5px;
+                font-size: 20px;
+            }
+        }
+        ul {
+            display: none;
+            align-items: center;
+            height: 100%;
+            gap: 32px;
+            @media (min-width: $breakpoint-m-tablet) {
+                display: flex;
+            }
+            li {
+                color: $--white--100;
+                a {
+                    text-decoration: none;
+                    @extend .text--body--large;
+                    color: $--white--100;
+
+                }
+
+            }
+        }
+    }
+} //END .c-nav
+
+//sections
+//section start
+.c-start {
+    padding: 128px 16px 64px;
+    background: radial-gradient(
+            35.21% 43.76% at 5.1% 7.01%,
+            rgba(0, 135, 254, 0.149164) 0%,
+            rgba(0, 135, 254, 0.2) 0%,
+            rgba(0, 135, 254, 0) 100%
+        ),
+        radial-gradient(27.36% 45.53% at 90.42% 60.07%, rgba(0, 135, 254, 0.2) 0%, rgba(0, 135, 254, 0) 100%), #1f1f1d;
+    display: flex;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 96px 32px 0px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        max-width: $layout-wrapper;
+        margin: 0 auto;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            justify-content: center;
+        }
+        @media (min-width: $breakpoint-xl-desktop) {
+            flex-direction: row;
+        }
+    }
+    &__content {
+        gap: 48px;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 50%;
+            justify-content: center;
+        }
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__title {
+        @extend .text--h600;
+        color: $--white--100;
+    }
+    &__description {
+        @extend .text--body--large;
+        color: $--white--72;
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+    }
+    &__tel a {
+        color: $--white--100;
+        @extend .text--h300;
+        line-height: 120%;
+        letter-spacing: 0.2px;
+        text-decoration-line: underline;
+    }
+    &__img {
+        text-align: center;
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 50%;
+        }
+    }
+} //END .c-start
+
+//c-tools section
+.c-tools {
+    background-color: #fff;
+    padding: 64px 16px;
+    @media (min-width: $breakpoint-m-tablet) {
+        flex-direction: row-reverse;
+        padding: 72px 32px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: $layout-wrapper;
+        margin: 0 auto;
+        gap: 32px;
+        @media (min-width: $breakpoint-m-tablet) {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (min-width: $breakpoint-m-tablet) {
+            align-self: center;
+            width: 50%;
+        }
+    }
+    &__title {
+        max-width: 552px;
+        @extend .text--h500;
+        span {
+            color: $--primary--50;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__item {
+        color: $--gray--100;
+        display: flex;
+        align-items: center;
+        @extend .text--body--medium;
+        &:before {
+            width: 24px;
+            height: 24px;
+            background-color: rgba(0, 135, 254, 0.1);
+            content: url("https://zadanie2.intype.pl/wp-content/themes/mobilizacja-biznesu-child/assets/icons/check-icon.webp");
+            border-radius: 100%;
+            float: left;
+            display: block;
+            margin-right: 10px;
+            text-align: center;
+            padding-top: 2px;
+        }
+    }
+    &__img {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 50%;
+            align-items: flex-end;
+            img {
+                width: 100%;
+                max-width: 552px;
+            }
+        }
+    }
+}
+
+.c-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+            35.76% 44.26% at 5.1% 7.01%,
+            rgba(0, 135, 254, 0.149164) 0%,
+            rgba(0, 135, 254, 0.2) 0%,
+            rgba(0, 135, 254, 0) 100%
+        ),
+        radial-gradient(45% 104.25% at 85.62% 105.07%, rgba(0, 135, 254, 0.2) 0%, rgba(0, 135, 254, 0) 100%),
+        linear-gradient(0deg, #1f1f1d, #1f1f1d), #1f1f1d;
+    padding: 64px 16px;
+    gap: 32px;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 72px 32px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        @media (min-width: $breakpoint-m-tablet) {
+            max-width: $layout-wrapper;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    &__item {
+        color: $--white--100;
+        gap: 11px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex: 1 1 30%;
+        }
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        @extend .text--h400;
+        &:before {
+            width: 8px;
+            height: 8px;
+            background-color: $--primary--100;
+            content: "";
+            border-radius: 100%;
+            float: left;
+            display: block;
+            margin-right: 10px;
+        }
+    }
+    &__description {
+        color: $--white--72;
+        padding-left: 16px;
+        @extend .text--body--medium;
+    }
+
+    &__line {
+        width: 100%;
+        background-color: $--white-40;
+        height: 1px;
+    }
+    &__button {
+        width: 100%;
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 249px;
+            align-self: flex-end;
+        }
+    }
+}
+
+.c-help {
+    background-color: $--white--100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 16px;
+    gap: 64px;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 72px 32px;
+    }
+    &__section-title {
+        width: 100%;
+        text-align: center;
+        @extend .text--h500;
+        span {
+            color: $--primary--50;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        @media (min-width: $breakpoint-m-tablet) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(21%, 1fr));
+            max-width: $layout-wrapper;
+            grid-column-gap: 32px;
+            grid-row-gap: 64px;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex: 1 0 21%;
+        }
+    }
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background-color: rgba(240, 248, 255, 1);
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+    &__title {
+        text-align: center;
+        @extend .text--h300;
+    }
+    &__description {
+        width: 100%;
+        text-align: center;
+        @extend .text--body--medium;
+    }
+}
+
+.c-articles {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 16px;
+    @media (min-width: $breakpoint-m-tablet) {
+        padding: 72px 32px 100px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 32px;
+        @media (min-width: $breakpoint-m-tablet) {
+            max-width: $layout-wrapper;
+        }
+    }
+    &__section-title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @extend .text--h500;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__button {
+        max-width: 177px;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            > :nth-child(3) {
+                display: none;
+            }
+        }
+        @media (min-width: $breakpoint-xl-desktop) {
+            flex-direction: row;
+            :nth-child(3) {
+                display: flex;
+            }
+        }
+    }
+    &__item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        text-decoration: none;
+        color: $--gray--100;
+    }
+    &__thumbnail {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    &__title {
+        width: 100%;
+        text-decoration: none;
+        @extend .text--h400;
+    }
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__date {
+        color: $--gray--10;
+        @extend .text--body--medium;
+    }
+    &__read-more {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        @extend .text--h300;
+        p {
+            text-decoration: underline;
+        }
+    }
+}
+
+//footer section
+.c-footer {
+    &__wrapper {
+        width: 100%;
+        max-width: $layout-wrapper;
+        display: flex;
+        flex-direction: column;
+        gap: 47px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    }
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        img {
+            max-width: 177px;
+        }
+        @media (min-width: $breakpoint-m-tablet) {
+            width: 50%;
+        }
+    }
+    &__description {
+        color: $--white--72;
+        @extend .text--body--medium;
+    }
+    &__nav {
+        margin-top: 12px;
+        display: flex;
+        gap: 24px;
+        color: $--white--100;
+        &__item {
+            @extend .text--body--large;
+        }
+        &__item:last-child {
+            min-width: 100px;
+        }
+    }
+    &__line {
+        background-color: $--white-40;
+        height: 1px;
+        width: 100%;
+    }
+
+    &__copy {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        color: $--white--72;
+        @extend .text--body--medium;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__mark {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @media (min-width: $breakpoint-m-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 24px;
+        }
+    }
+}

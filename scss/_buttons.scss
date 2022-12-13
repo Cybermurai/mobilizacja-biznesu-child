@@ -1,0 +1,29 @@
+@import 'colors';
+.btn{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 12px;
+    border-radius:2px;
+    cursor:pointer;
+    text-decoration: none;
+    &--primary {
+        background-color: $--primary--50;
+        color: $--white--100;
+        &:hover{
+            background-color: $--primary--100;
+            color:$--white--100;
+        }
+    }
+    &--secondary{
+        background-color: transparent;
+        border: 1px solid #FFFFFF;
+        color: $--white--100;
+    }
+}
+
