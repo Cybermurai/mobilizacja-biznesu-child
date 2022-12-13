@@ -10,7 +10,7 @@ function my_theme_enqueue_styles() {
 		$theme->parent()->get( 'Version' )
 	);
 	wp_enqueue_style( 'child-style',
-		get_stylesheet_uri().'/dist/app.css',
+		get_stylesheet_directory_uri().'/dist/app.css',
 		array( $parenthandle ),
 		$theme->get( 'Version' ) // This only works if you have Version defined in the style header.
 	);
